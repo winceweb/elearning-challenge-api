@@ -9,8 +9,7 @@ class Problematic extends Model{
     protected $table = 'Problematic';
     protected $fillable = ['movieUrl', 'caption', 'entitled', 'idUser', 'idLesson'];
     // protected $hidden   = ['created_at', 'updated_at'];
-}
-
-public function lesson(){
-    return $this->belongsTo('App\Lesson');
+    public function lesson(){
+        return $this->belongsTo('App\Lesson');
+    }
 }
