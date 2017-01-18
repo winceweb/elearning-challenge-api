@@ -1,6 +1,4 @@
-<?php
-
-namespace App\Http\Controllers;
+<?php namespace App\Http\Controllers;
 
 use App\User;
 
@@ -92,10 +90,7 @@ class UserController extends Controller{
 	}
 
 	public function isAuthorized(Request $request){
-
 		$resource = "User";
-		// $user     = User::find($this->getArgs($request)["user_id"]);
-
 		return $this->authorizeUser($request, $resource);
 	}
 }
