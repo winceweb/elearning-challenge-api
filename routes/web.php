@@ -14,3 +14,14 @@
 $app->get('/', function () use ($app) {
     return $app->version();
 });
+
+$app->group(['prefix' => 'api/v1'], function($app)
+{
+	$app->post('category','CategoryController@createCategory');
+
+	$app->put('category/{id}','CategoryController@updateCategory');
+
+	$app->delete('category/{id}','CategoryController@deleteCategory');
+
+	$app->get('category','CategoryController@index');
+});
