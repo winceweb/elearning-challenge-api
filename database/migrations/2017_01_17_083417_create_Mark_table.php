@@ -11,7 +11,6 @@ class CreateMarkTable extends Migration {
 			$table->integer('value');
 			$table->integer('idMark', true);
 			$table->integer('idUser')->unsigned();
-			$table->integer('idLesson')->unsigned();
 			$table->integer('idProblematic')->unsigned();
 			$table->timestamps();
 		});

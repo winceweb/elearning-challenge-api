@@ -9,9 +9,10 @@ class CreateLessonTable extends Migration {
 	{
 		Schema::create('Lesson', function(Blueprint $table) {
 			$table->integer('idLesson', true);
-			$table->date('endDate');
+			$table->datetime('endDate');
 			$table->datetime('startDate');
 			$table->string('subject', 255);
+			$table->text('content');
 			$table->integer('idUser')->unsigned();
 			$table->integer('idCategory')->unsigned();
 			$table->timestamps();

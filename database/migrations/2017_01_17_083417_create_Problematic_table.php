@@ -14,6 +14,7 @@ class CreateProblematicTable extends Migration {
 			$table->string('entitled', 255);
 			$table->integer('idLesson')->unsigned();
 			$table->integer('idUser')->unsigned();
+			$table->timestamps();
 		});
 	}
 
