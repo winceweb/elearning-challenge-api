@@ -31,7 +31,7 @@ class UserController extends Controller{
           'isActive' => $request->get('isActive'),
 				]);
 
-		return $this->success("L'utilisateur avec l'id: {$user->id} est crée", 201);
+		return $this->success("L'utilisateur n°  {$user->id} est crée", 201);
 	}
 
 	public function show($id){
@@ -39,7 +39,7 @@ class UserController extends Controller{
 		$user = User::find($id);
 
 		if(!$user){
-			return $this->error("L'utilisateur avec l'id: {$id} n'existe pas", 404);
+			return $this->error("L'utilisateur n°  {$id} n'existe pas", 404);
 		}
 
 		return $this->success($user, 200);
@@ -50,7 +50,7 @@ class UserController extends Controller{
 		$user = User::find($id);
 
 		if(!$user){
-			return $this->error("L'utilisateur avec l'id: {$id} n'existe pas", 404);
+			return $this->error("L'utilisateur n°  {$id} n'existe pas", 404);
 		}
 
 		$this->validateRequest($request);
@@ -63,7 +63,7 @@ class UserController extends Controller{
 
 		$user->save();
 
-		return $this->success("L'utilisateur avec l'id: {$user->id} a bien été modifié", 200);
+		return $this->success("L'utilisateur n°  {$user->id} a bien été modifié", 200);
 	}
 
 	public function destroy($id){
@@ -71,12 +71,12 @@ class UserController extends Controller{
 		$user = User::find($id);
 
 		if(!$user){
-			return $this->error("L'utilisateur avec l'id: {$id} n'existe pas", 404);
+			return $this->error("L'utilisateur n°  {$id} n'existe pas", 404);
 		}
 
 		$user->delete();
 
-		return $this->success("L'utilisateur avec l'id: {$id} a bien été supprimé", 200);
+		return $this->success("L'utilisateur n°  {$id} a bien été supprimé", 200);
 	}
 
 	public function validateRequest(Request $request){
