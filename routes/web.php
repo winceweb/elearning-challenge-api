@@ -19,7 +19,7 @@ $app->post('oauth/access_token', ['middleware' => 'cors', function() use ($app){
      return response()->json($app->make('oauth2-server.authorizer')->issueAccessToken());
 }]);
 
-$app->group(['prefix' => 'api/v1'], ['middleware' => 'cors', function($app)
+$app->group(['prefix' => 'api/v1', 'middleware' => 'cors'], function($app)
 {
   // Category
 	$app->post('category','CategoryController@createCategory');
@@ -51,4 +51,4 @@ $app->group(['prefix' => 'api/v1'], ['middleware' => 'cors', function($app)
   $app->put('lesson/{lesson_id}/problematic/{problematic_id}', 'LessonProblematicController@update');
   $app->delete('lesson/{lesson_id}/problematic/{problematic_id}', 'LessonProblematicController@destroy');
 
-}]);
+});
