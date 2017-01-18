@@ -13,7 +13,7 @@
 
 $app->get('/', ['middleware' => 'cors', function () use ($app) {
     return $app->version();
-});
+}]);
 
 $app->post('oauth/access_token', ['middleware' => 'cors', function() use ($app){
      return response()->json($app->make('oauth2-server.authorizer')->issueAccessToken());
