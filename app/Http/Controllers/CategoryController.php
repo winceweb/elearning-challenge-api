@@ -1,5 +1,4 @@
-<?php
-namespace App\Http\Controllers;
+<?php  namespace App\Http\Controllers;
 
 use App\Category;
 use App\Http\Controllers\Controller;

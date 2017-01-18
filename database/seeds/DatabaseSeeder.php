@@ -17,6 +17,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+
+        // $this->call('OAuthClientSeeder');
+
       DB::statement('SET FOREIGN_KEY_CHECKS = 0');
 
       User::truncate();
@@ -24,6 +27,17 @@ class DatabaseSeeder extends Seeder
       Lesson::truncate();
       Problematic::truncate();
       Commentary::truncate();
+      // oauth_clients::truncate();
+
+      for ($i=0; $i < 10; $i++){
+
+          DB::table('oauth_clients')->insert(
+              [   'id' => "id$i",
+                  'secret' => "secret$i",
+                  'name' => "Test Client $i"
+              ]
+          );
+      }
 
       factory(User::class, 10)->create();
       factory(Category::class, 5)->create();

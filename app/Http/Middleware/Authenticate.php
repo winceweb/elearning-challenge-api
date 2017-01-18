@@ -1,10 +1,6 @@
-<?php
-
-namespace App\Http\Middleware;
-
+<?php namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Contracts\Auth\Factory as Auth;
-
 class Authenticate
 {
     /**
@@ -13,7 +9,6 @@ class Authenticate
      * @var \Illuminate\Contracts\Auth\Factory
      */
     protected $auth;
-
     /**
      * Create a new middleware instance.
      *
@@ -24,7 +19,6 @@ class Authenticate
     {
         $this->auth = $auth;
     }
-
     /**
      * Handle an incoming request.
      *
@@ -38,7 +32,8 @@ class Authenticate
         if ($this->auth->guard($guard)->guest()) {
             return response('Unauthorized.', 401);
         }
-
         return $next($request);
     }
 }
+
+    Contact GitHub API Training Shop Blog About
