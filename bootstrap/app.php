@@ -64,6 +64,10 @@ $app->middleware([
 ]);
 
 $app->routeMiddleware([
+    'cors' => 'App\Http\Middleware\LumenCors',
+]);
+
+$app->routeMiddleware([
         // 'auth' => App\Http\Middleware\Authenticate::class,
         'oauth' => \LucaDegasperi\OAuth2Server\Middleware\OAuthMiddleware::class,
         // 'oauth-user'=> \LucaDegasperi\OAuth2Server\Middleware\OAuthUserOwnerMiddleware::class
