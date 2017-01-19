@@ -9,4 +9,7 @@ class Commentary extends Model{
     protected $table = 'Commentary';
     protected $fillable = ['description', 'idProblematic', 'idUser'];
     // protected $hidden   = ['created_at', 'updated_at'];
+    public function Problematic(){
+        return $this->belongsTo('App\Problematic', 'idCommentary');
+    }
 }

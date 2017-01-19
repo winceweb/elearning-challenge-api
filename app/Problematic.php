@@ -12,4 +12,8 @@ class Problematic extends Model{
     public function lesson(){
         return $this->belongsTo('App\Lesson', 'idProblematic');
     }
+
+    public function commentaries(){
+        return $this->hasMany('App\Commentary', 'idProblematic');
+    }
 }
