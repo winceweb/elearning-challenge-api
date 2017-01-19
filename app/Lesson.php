@@ -11,6 +11,6 @@ class Lesson extends Model{
     // protected $hidden   = ['created_at', 'updated_at'];
 
     public function problematics(){
-        return $this->hasMany('App\Problematic');
+        return $this->hasMany('App\Problematic', 'idLesson');
     }
 }

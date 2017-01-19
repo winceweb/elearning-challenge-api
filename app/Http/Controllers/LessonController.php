@@ -10,8 +10,8 @@ class LessonController extends Controller{
 	}
 
 	public function index(){
-		$posts = Lesson::all();
-		return $this->success($posts, 200);
+		$lessons = Lesson::all();
+		return $this->success($lessons, 200);
 	}
 
 	public function store(Request $request){
