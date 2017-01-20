@@ -46,9 +46,9 @@ $app->group(['prefix' => 'api/v1', 'middleware' => 'cors'], function($app)
   $app->get('problematic/{id}', 'ProblematicController@show');
 
   //  Problematics's Lesson
-  $app->get('lesson/{idLesson}/problematic', 'LessonProblematicController@index');
-  $app->post('lesson/{idLesson}/problematic', 'LessonProblematicController@store');
-  $app->put('lesson/{idLesson}/problematic/{idProblematic}', 'LessonProblematicController@update');
-  $app->delete('lesson/{idLesson}/problematic/{idProblematic}', 'LessonProblematicController@destroy');
+  $app->get('lesson/{lesson_id}/problematic', 'LessonProblematicController@index');
+  $app->post('lesson/{lesson_id}/problematic', 'LessonProblematicController@store');
+  $app->put('lesson/{lesson_id}/problematic/{problematic_id}', 'LessonProblematicController@update');
+  $app->delete('lesson/{lesson_id}/problematic/{problematic_id}', 'LessonProblematicController@destroy');
 
 });

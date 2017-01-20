@@ -35,5 +35,3 @@ class Authenticate
         return $next($request);
     }
 }
-
-    Contact GitHub API Training Shop Blog About
