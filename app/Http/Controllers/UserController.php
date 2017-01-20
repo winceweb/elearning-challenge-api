@@ -45,6 +45,16 @@ class UserController extends Controller{
 		return $this->success($user, 200);
 	}
 
+	public function getUser(){
+		$user = User::find($this->getUserId());
+
+		if(!$user){
+			return $this->error("Vous n'êtes pas authentifié", 404);
+		}
+
+		return $this->success($user, 200);
+	}
+
 	public function update(Request $request, $id){
 
 		$user = User::find($id);

@@ -29,6 +29,7 @@ $app->group(['prefix' => 'api/v1', 'middleware' => 'cors'], function($app)
 
   //Users
   $app->get('users', 'UserController@index');
+  $app->get('getUser', 'UserController@getUser');
   $app->post('users', 'UserController@store');
   $app->get('users/{id}', 'UserController@show');
   $app->put('users/{id}', 'UserController@update');
