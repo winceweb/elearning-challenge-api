@@ -44,7 +44,7 @@ class DatabaseSeeder extends Seeder
       factory(Lesson::class, 20)->create();
       factory(Problematic::class, 50)->create();
       factory(Commentary::class, 100)->create();
-      factory(Mark::class, 150)->create();
+      // factory(Mark::class, 150)->create();
       // Enable it back
       DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }

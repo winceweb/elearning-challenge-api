@@ -53,4 +53,8 @@ $app->group(['prefix' => 'api/v1', 'middleware' => 'cors'], function($app)
   $app->put('lesson/{lesson_id}/problematic/{problematic_id}', 'LessonProblematicController@update');
   $app->delete('lesson/{lesson_id}/problematic/{problematic_id}', 'LessonProblematicController@destroy');
 
+  // Ratings système
+  $app->post('/{id}/ratings', 'LessonRatingsController@store');
+  $app->delete('/{lessonId}/ratings/{ratingId}','LessonRatingsController@destroy');
+
 });

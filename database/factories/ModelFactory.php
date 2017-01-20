@@ -46,13 +46,13 @@ $factory->define(App\Commentary::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Mark::class, function (Faker\Generator $faker) {
-    return [
-        'value' => mt_rand(1, 5),
-        'idUser' => mt_rand(1, 10),
-        'idProblematic' => mt_rand(1, 50)
-    ];
-});
+// $factory->define(App\Mark::class, function (Faker\Generator $faker) {
+//     return [
+//         'value' => mt_rand(1, 5),
+//         'idUser' => mt_rand(1, 10),
+//         'idProblematic' => mt_rand(1, 50)
+//     ];
+// });
 
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     $hasher = app()->make('hash');
@@ -63,5 +63,11 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'isTeacher' => true,
         'isActive' => true,
         'password' => $hasher->make("secret")
+    ];
+});
+
+$factory->define(\App\Rating::class, function ($faker) {
+    return [
+        'value' => rand(1, 5)
     ];
 });

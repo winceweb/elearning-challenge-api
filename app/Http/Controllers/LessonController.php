@@ -11,7 +11,7 @@ class LessonController extends Controller{
 	}
 
 	public function index(){
-		$lessons = Lesson::all();
+		$lessons = Lesson::with('ratings')->get();
 		return $this->success($lessons, 200);
 	}
 
@@ -76,7 +76,8 @@ class LessonController extends Controller{
 	public function validateRequest(Request $request){
 		$rules = [
 			'subject' => 'required',
-			'content' => 'required'
+			'content' => 'required',
+			'idCategory' => 'idCategory'
 		];
 		$this->validate($request, $rules);
 	}
