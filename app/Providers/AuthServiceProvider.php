@@ -62,7 +62,7 @@ class AuthServiceProvider extends ServiceProvider
         }
     }
     /**
-     * Define abilities that checks if the current user is admin.
+     * Define abilities that checks if the current user is Teacher.
      *
      * @param  array  $arguments
      * @return boolean

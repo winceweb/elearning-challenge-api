@@ -1,6 +1,7 @@
 <?php  namespace App\Http\Controllers;
 
 use App\Lesson;
+use App\Category;
 use Illuminate\Http\Request;
 
 class LessonController extends Controller{
@@ -11,6 +12,17 @@ class LessonController extends Controller{
 
 	public function index(){
 		$lessons = Lesson::all();
+		return $this->success($lessons, 200);
+	}
+
+	public function byCategory($id){
+		$category = Category::find($id);
+
+		if(!$category){
+			return $this->error("La catégorie  N° {$id} n'existe pas", 404);
+		}
+
+		$lessons = $category->lessons;
 		return $this->success($lessons, 200);
 	}
 
