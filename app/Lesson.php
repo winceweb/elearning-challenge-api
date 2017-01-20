@@ -13,4 +13,8 @@ class Lesson extends Model{
     public function problematics(){
         return $this->hasMany('App\Problematic', 'idLesson');
     }
+
+    public function category(){
+        return $this->belongsTo('App\Category', 'idLesson');
+    }
 }

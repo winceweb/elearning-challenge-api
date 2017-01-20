@@ -37,6 +37,7 @@ $app->group(['prefix' => 'api/v1', 'middleware' => 'cors'], function($app)
 
   // Lessons
   $app->get('lesson', 'LessonController@index');
+  $app->get('lesByCat/{id}', 'LessonController@byCategory');
   $app->post('lesson', 'LessonController@store');
   $app->get('lesson/{id}', 'LessonController@show');
   $app->put('lesson/{id}', 'LessonController@update');

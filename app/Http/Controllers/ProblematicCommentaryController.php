@@ -27,7 +27,7 @@ class ProblematicCommentaryController extends Controller{
 
 	public function store(Request $request, $idProblematic){
 
-		$problematic = Lesson::find($idProblematic);
+		$problematic = Problematic::find($idProblematic);
 
 		if(!$problematic){
 			return $this->error("La problématique N° {$idProblematic} n'existe pas", 404);
@@ -35,7 +35,7 @@ class ProblematicCommentaryController extends Controller{
 
 		$this->validateRequest($request);
 
-		$commentary = Problematic::create([
+		$commentary = Commentary::create([
 				'description' => $request->get('description'),
 				'idUser'=> $this->getUserId(),
 				'idProblematic'=> $idProblematic
@@ -46,8 +46,8 @@ class ProblematicCommentaryController extends Controller{
 
 	public function update(Request $request, $idProblematic, $idCommentary){
 
-		$commentary 	= Problematic::find($idCommentary);
-		$problematic 		= Lesson::find($idProblematic);
+		$commentary 	= Commentary::find($idCommentary);
+		$problematic 	= Problematic::find($idProblematic);
 
 		if(!$commentary || !$problematic){
 			return $this->error("Le commentaire N° {$idCommentary} et/ou la problématique N° id {$idProblematic} n'existent pas", 404);
@@ -66,8 +66,8 @@ class ProblematicCommentaryController extends Controller{
 
 	public function destroy($idProblematic, $idCommentary){
 
-		$commentary 	= Problematic::find($idCommentary);
-		$problematic 		= Lesson::find($idProblematic);
+		$commentary 	= Commentary::find($idCommentary);
+		$problematic 	= Problematic::find($idProblematic);
 
 		if(!$commentary || !$problematic){
 			return $this->error("Le commentaire N° {$idCommentary} ou La problématique N° id {$idProblematic} n'existe pas", 404);
