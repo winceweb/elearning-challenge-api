@@ -40,7 +40,7 @@ class LessonController extends Controller{
 	}
 
 	public function show($id){
-		$lesson = Lesson::find($id);
+		$lesson = Lesson::with('user')->find($id);
 		if(!$lesson){
 			return $this->error("La Leçon N° {$id} n'existe pas", 404);
 		}

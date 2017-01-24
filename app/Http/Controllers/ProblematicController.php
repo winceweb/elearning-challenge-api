@@ -10,7 +10,7 @@ class ProblematicController extends Controller{
 
 	public function show($id){
 
-		$problematic = Problematic::with('user')->get();
+		$problematic = Problematic::with('user')->find($id);
 		if(!$problematic){
 			return $this->error("La problématique N°  {$id} n'existe pas", 404);
 		}
