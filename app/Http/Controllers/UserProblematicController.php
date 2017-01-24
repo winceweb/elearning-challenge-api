@@ -9,8 +9,8 @@ class UserProblematicController extends Controller{
 
 	public function __construct(){
 
-		$this->middleware('oauth', ['except' => ['index', 'show']]);
-		$this->middleware('authorize:' . __CLASS__, ['except' => ['index', 'show', 'store']]);
+		// $this->middleware('oauth', ['except' => ['index', 'show']]);
+		// $this->middleware('authorize:' . __CLASS__, ['except' => ['index', 'show', 'store']]);
 	}
 
 	public function index($idUser){
@@ -26,11 +26,11 @@ class UserProblematicController extends Controller{
 	}
 
 
-	public function isAuthorized(Request $request){
-
-		$resource  = "Problematic";
-		$problematic   = Problematic::find($this->getArgs($request)["idProblematic"]);
-
-		return $this->authorizeUser($request, $resource, $problematic);
-	}
+	// public function isAuthorized(Request $request){
+	//
+	// 	$resource  = "Problematic";
+	// 	$problematic   = Problematic::find($this->getArgs($request)["idProblematic"]);
+	//
+	// 	return $this->authorizeUser($request, $resource, $problematic);
+	// }
 }

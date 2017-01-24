@@ -47,16 +47,21 @@ $app->group(['prefix' => 'api/v1', 'middleware' => 'cors'], function($app)
   $app->get('problematic', 'ProblematicController@index');
   $app->get('problematic/{id}', 'ProblematicController@show');
 
-  $app->get('liste/oeuvre/{$idUser}', 'UserProblematicController@index');
-
   //  Problematics's Lesson
   $app->get('lesson/{lesson_id}/problematic', 'LessonProblematicController@index');
   $app->post('lesson/{lesson_id}/problematic', 'LessonProblematicController@store');
   $app->put('lesson/{lesson_id}/problematic/{problematic_id}', 'LessonProblematicController@update');
   $app->delete('lesson/{lesson_id}/problematic/{problematic_id}', 'LessonProblematicController@destroy');
 
+  //  Commentaries's Problematic
+  $app->get('problematic/{problematic_id}/commentary', 'ProblematicCommentaryController@index');
+  $app->post('problematic/{problematic_id}/commentary', 'ProblematicCommentaryController@store');
+  $app->put('problematic/{problematic_id}/commentary/{commentary_id}', 'ProblematicCommentaryController@update');
+  $app->delete('problematic/{problematic_id}/commentary/{commentary_id}', 'ProblematicCommentaryController@destroy');
+
   // Ratings système
   $app->post('/{id}/ratings', 'LessonRatingsController@store');
   $app->delete('/{lessonId}/ratings/{ratingId}','LessonRatingsController@destroy');
 
+  $app->get('liste/oeuvre/{idUser}', 'UserProblematicController@index');
 });
