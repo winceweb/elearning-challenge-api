@@ -4,13 +4,13 @@ use App\Problematic;
 class ProblematicController extends Controller{
 	public function index(){
 
-		$problematics = Problematic::all();
+		$problematics = Problematic::with('user')->get();
 		return $this->success($problematics, 200);
 	}
 
 	public function show($id){
 
-		$problematic = Problematic::find($id);
+		$problematic = Problematic::with('user')->get();
 		if(!$problematic){
 			return $this->error("La problématique N°  {$id} n'existe pas", 404);
 		}
