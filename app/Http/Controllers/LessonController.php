@@ -11,7 +11,7 @@ class LessonController extends Controller{
 	}
 
 	public function index(){
-		$lessons = Lesson::with('ratings')->get();
+		$lessons = Lesson::with('user')->get();
 		return $this->success($lessons, 200);
 	}
 

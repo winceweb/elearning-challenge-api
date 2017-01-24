@@ -47,6 +47,8 @@ $app->group(['prefix' => 'api/v1', 'middleware' => 'cors'], function($app)
   $app->get('problematic', 'ProblematicController@index');
   $app->get('problematic/{id}', 'ProblematicController@show');
 
+  $app->get('liste/oeuvre/{$idUser}', 'UserProblematicController@index');
+
   //  Problematics's Lesson
   $app->get('lesson/{lesson_id}/problematic', 'LessonProblematicController@index');
   $app->post('lesson/{lesson_id}/problematic', 'LessonProblematicController@store');
