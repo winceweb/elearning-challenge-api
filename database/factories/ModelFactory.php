@@ -62,6 +62,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->email,
+        'image' => rand(1, 10),
         'isTeacher' => true,
         'isActive' => true,
         'password' => $hasher->make("secret")

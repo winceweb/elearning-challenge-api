@@ -22,7 +22,7 @@ class RatingsController extends Controller
                                   ])->avg('value');
 
     //  ROUND(AVG(value), 1) as notes
-      return $this->success(round($val_rating, 1), 200);
+      return $this->success(round($val_rating, 0), 200);
     }
 
     public function store(Request $request)

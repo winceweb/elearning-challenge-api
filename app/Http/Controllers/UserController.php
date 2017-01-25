@@ -27,6 +27,7 @@ class UserController extends Controller{
 					'email' => $request->get('email'),
 					'password'=> Hash::make($request->get('name')),
           'name' => $request->get('name'),
+					'image' => $request->get('image'),
           'isTeacher' => $request->get('isTeacher'),
           'isActive' => $request->get('isActive'),
 				]);
@@ -69,6 +70,7 @@ class UserController extends Controller{
     $user->name       = $request->get('name');
     $user->isTeacher  = $request->get('isTeacher');
     $user->isActive   = $request->get('isActive');
+		$user->image      = $request->get('image');
 		$user->password 	= Hash::make($request->get('password'));
 
 		$user->save();
