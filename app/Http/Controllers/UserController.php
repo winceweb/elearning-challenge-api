@@ -25,7 +25,7 @@ class UserController extends Controller{
 
 		$user = User::create([
 					'email' => $request->get('email'),
-					'password'=> Hash::make($request->get('password')),
+					'password'=> Hash::make($request->get('name')),
           'name' => $request->get('name'),
           'isTeacher' => $request->get('isTeacher'),
           'isActive' => $request->get('isActive'),
@@ -93,7 +93,6 @@ class UserController extends Controller{
 
 		$rules = [
 			'email' => 'required|email|unique:User',
-			'password' => 'required|min:6'
 		];
 
 		$this->validate($request, $rules);

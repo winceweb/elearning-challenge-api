@@ -66,8 +66,11 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(\App\Rating::class, function ($faker) {
+$factory->define(App\Rating::class, function (Faker\Generator $faker) {
     return [
-        'value' => rand(1, 5)
+        'value' => rand(1, 5),
+        'rateable_id' => mt_rand(1, 50),
+        'rateable_type' => mt_rand(1, 2),
+        'idUser' => mt_rand(1, 10)
     ];
 });

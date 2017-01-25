@@ -6,7 +6,7 @@ use App\Category;
 use App\Lesson;
 use App\Problematic;
 use App\Commentary;
-use App\Mark;
+use App\Rating;
 
 class DatabaseSeeder extends Seeder
 {
@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
       Lesson::truncate();
       Problematic::truncate();
       Commentary::truncate();
+      Rating::truncate();
       // oauth_clients::truncate();
 
       for ($i=0; $i < 10; $i++){
@@ -44,6 +45,7 @@ class DatabaseSeeder extends Seeder
       factory(Lesson::class, 20)->create();
       factory(Problematic::class, 50)->create();
       factory(Commentary::class, 100)->create();
+      factory(Rating::class, 300)->create();
       // factory(Mark::class, 150)->create();
       // Enable it back
       DB::statement('SET FOREIGN_KEY_CHECKS = 1');

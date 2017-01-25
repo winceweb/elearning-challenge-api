@@ -60,8 +60,8 @@ $app->group(['prefix' => 'api/v1', 'middleware' => 'cors'], function($app)
   $app->delete('problematic/{problematic_id}/commentary/{commentary_id}', 'ProblematicCommentaryController@destroy');
 
   // Ratings système
-  $app->post('/{id}/ratings', 'LessonRatingsController@store');
-  $app->delete('/{lessonId}/ratings/{ratingId}','LessonRatingsController@destroy');
+  $app->post('ratings', 'RatingsController@store');
+  $app->get('/{rateable_type}/ratings/{rateable_id}','RatingsController@show');
 
   $app->get('liste/oeuvre/{idUser}', 'UserProblematicController@index');
 });

@@ -16,15 +16,10 @@ class LessonController extends Controller{
 	}
 
 	public function byCategory($id){
-		$category = Category::find($id);
-
-		if(!$category){
-			return $this->error("La catégorie  N° {$id} n'existe pas", 404);
-		}
-
-		$lessons = $category->lessons;
+		$lessons = Lesson::with('user')->where('idCategory', $id)->get();
 		return $this->success($lessons, 200);
 	}
+
 
 	public function store(Request $request){
 		$this->validateRequest($request);
@@ -36,7 +31,7 @@ class LessonController extends Controller{
           'idCategory' => $request->get('idCategory'),
 					'idUser'     => $this->getUserId()
 				]);
-		return $this->success("La Leçon N° {$lesson->id} a été créée", 201);
+		return $this->success("La Leçon a été créée", 201);
 	}
 
 	public function show($id){
@@ -77,7 +72,7 @@ class LessonController extends Controller{
 		$rules = [
 			'subject' => 'required',
 			'content' => 'required',
-			'idCategory' => 'idCategory'
+			'idCategory' => 'required'
 		];
 		$this->validate($request, $rules);
 	}
