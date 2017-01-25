@@ -12,4 +12,8 @@ class Commentary extends Model{
     public function Problematic(){
         return $this->belongsTo('App\Problematic', 'idCommentary');
     }
+
+    public function user(){
+        return $this->belongsTo('App\User', 'idCommentary');
+    }
 }

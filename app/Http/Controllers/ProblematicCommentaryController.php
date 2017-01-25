@@ -14,14 +14,7 @@ class ProblematicCommentaryController extends Controller{
 	}
 
 	public function index($idProblematic){
-
-		$problematic = Problematic::find($idProblematic);
-
-		if(!$problematic){
-			return $this->error("La problématique N° {$idProblematic} n'existe pas", 404);
-		}
-
-		$commentarys = $problematic->commentaries;
+		$commentarys = Commentary::with('user')->where('idCommentary', $idProblematic)->get();
 		return $this->success($commentarys, 200);
 	}
 
