@@ -12,6 +12,8 @@ class CreateLessonTable extends Migration {
 			$table->datetime('endDate');
 			$table->datetime('startDate');
 			$table->string('subject', 255);
+			$table->text('urlLesson');
+			$table->text('image');
 			$table->text('content');
 			$table->integer('idUser')->unsigned();
 			$table->integer('idCategory')->unsigned();

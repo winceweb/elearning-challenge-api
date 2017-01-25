@@ -21,6 +21,8 @@ $factory->define(App\Lesson::class, function (Faker\Generator $faker) {
     return [
         'subject' => $faker->sentence(4),
         'content' => $faker->paragraph(4),
+        'urlLesson' => "http://it-akademy.slides.com/sferey/rest-webapps?token=dwLBalLS#/",
+        'image' => "http://www.9spl.com/blog/wp-content/uploads/2015/12/laravel_5.21.jpg",
         'startDate' => $faker->dateTimeThisMonth()->format('Y-m-d H:i:s'),
         'endDate' => $faker->dateTimeThisMonth()->format('Y-m-d H:i:s'),
         'idUser' => mt_rand(1, 10),

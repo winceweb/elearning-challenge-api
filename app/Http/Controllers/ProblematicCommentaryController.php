@@ -14,7 +14,7 @@ class ProblematicCommentaryController extends Controller{
 	}
 
 	public function index($idProblematic){
-		$commentarys = Commentary::with('user')->where('idCommentary', $idProblematic)->get();
+		$commentarys = Commentary::with('user')->where('idProblematic', $idProblematic)->get();
 		return $this->success($commentarys, 200);
 	}
 
