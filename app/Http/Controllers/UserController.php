@@ -25,7 +25,7 @@ class UserController extends Controller{
 
 		$user = User::create([
 					'email' => $request->get('email'),
-					'password'=> Hash::make($request->get('name')),
+					'password'=> Hash::make($request->get('password')),
           'name' => $request->get('name'),
 					'image' => $request->get('image'),
           'isTeacher' => $request->get('isTeacher'),
