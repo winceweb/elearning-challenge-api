@@ -16,8 +16,7 @@ class RatingsController extends Controller
 
     public function show($rateable_type, $rateable_id)
     {
-      $val_rating = Rating::where([
-                                    ['rateable_id', '=', $rateable_id],
+      $val_rating = Rating::where([ ['rateable_id', '=', $rateable_id],
                                     ['rateable_type', '=', $rateable_type]
                                   ])->avg('value');
 
