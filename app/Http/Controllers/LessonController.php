@@ -30,6 +30,7 @@ class LessonController extends Controller{
 					'startDate'  => $request->get('startDate'),
           			'idCategory' => $request->get('idCategory'),
 					'urlLesson'  => $request->get('urlLesson'),
+					'image'  => $request->get('image'),
 					'idUser'     => $this->getUserId()
 				]);
 		return $this->success("La Leçon a été créée", 201);
