@@ -49,7 +49,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     }
 
     public function lessons(){
-        return $this->hasMany('App\Problematic', 'idUser');
+        return $this->hasMany('App\Lesson', 'idUser');
     }
 
     public function commentaries(){

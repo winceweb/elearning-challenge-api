@@ -36,13 +36,13 @@ class LessonProblematicController extends Controller{
 		$this->validateRequest($request);
 
 		$problematic = Problematic::create([
-				'movieUrl' => $request->get('movieUrl'),
-				'caption' => $request->get('caption'),
-				'entitled' => $request->get('entitled'),
-				'idUser'=> $this->getUserId(),
-				'idLesson'=> $idLesson
-			]);
-
+			'movieUrl' => $request->get('movieUrl'),
+			'caption' => $request->get('caption'),
+			'entitled' => $request->get('entitled'),
+			'idUser'=> $this->getUserId(),
+			'idLesson'=> $idLesson
+		]);
+		
 		return $this->success("La problématique N° {$problematic->id} a été créée et affectée à la leçon N° id {$idLesson}", 201);
 	}
 

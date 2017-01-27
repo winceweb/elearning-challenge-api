@@ -26,9 +26,9 @@ class LessonController extends Controller{
 		$lesson = Lesson::create([
 					'subject'    => $request->get('subject'),
 					'content'    => $request->get('content'),
-          'endDate'    => $request->get('endDate'),
+          			'endDate'    => $request->get('endDate'),
 					'startDate'  => $request->get('startDate'),
-          'idCategory' => $request->get('idCategory'),
+          			'idCategory' => $request->get('idCategory'),
 					'urlLesson'  => $request->get('urlLesson'),
 					'idUser'     => $this->getUserId()
 				]);
@@ -51,11 +51,11 @@ class LessonController extends Controller{
 		$this->validateRequest($request);
 		$lesson->subject 		= $request->get('subject');
 		$lesson->content 		= $request->get('content');
-    $lesson->endDate 		= $request->get('endDate');
-		$lesson->startDate 	= $request->get('startDate');
-    $lesson->idCategory = $request->get('idCategory');
-		$lesson->urlLesson = $request->get('urlLesson');
-		$lesson->image = $request->get('image');
+    	$lesson->endDate 		= $request->get('endDate');
+		$lesson->startDate 		= $request->get('startDate');
+    	$lesson->idCategory 	= $request->get('idCategory');
+		$lesson->urlLesson 		= $request->get('urlLesson');
+		$lesson->image 			= $request->get('image');
 		$lesson->idUser 		= $this->getUserId();
 		$lesson->save();
 		return $this->success("La Leçon N° {$lesson->id} a été modifiée", 200);

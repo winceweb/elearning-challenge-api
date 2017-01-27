@@ -62,13 +62,13 @@ class ProblematicCommentaryController extends Controller{
 		$commentary 	= Commentary::find($idCommentary);
 		$problematic 	= Problematic::find($idProblematic);
 
-		if(!$commentary || !$problematic){
-			return $this->error("Le commentaire N° {$idCommentary} ou La problématique N° id {$idProblematic} n'existe pas", 404);
-		}
+		// if(!$commentary || !$problematic){
+		// 	return $this->error("Le commentaire N° {$idCommentary} ou La problématique N° id {$idProblematic} n'existe pas", 404);
+		// }
 
-		if(!$problematic->problematics()->find($idCommentary)){
-			return $this->error("Le commentaire N° {$idCommentary} n'est pas affectée à la problématique N° {$idProblematic}", 409);
-		}
+		// if(!$problematic->problematics()->find($idCommentary)){
+		// 	return $this->error("Le commentaire N° {$idCommentary} n'est pas affectée à la problématique N° {$idProblematic}", 409);
+		// }
 
 		$commentary->delete();
 
